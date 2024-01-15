@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+
+## Author: Sergii T
+## Last Update: 15.01.2024
+## ver. 0.02
+
 import os
 import subprocess
 
