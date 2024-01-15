@@ -2,7 +2,7 @@
 
 ## Author: Sergii T
 ## Last Update: 15.01.2024
-## ver. 0.02
+## ver. 0.03
 
 import os
 import subprocess
@@ -29,14 +29,14 @@ def main():
             return
 
     print("Обновление и установка Nginx...")
-    run_cmd("yum update -y")
+    run_cmd("yum remove -y nginx")
     run_cmd("yum install -y nginx")
     run_cmd("systemctl start nginx")
 
     print("Проверка установки Nginx...")
     nginx_status = run_cmd("systemctl is-active nginx")
     if nginx_status != "active\n":
-        print("Ошибка при установке Nginx!")
+        print("Ошибка при установке Nginx! Сервис не запустился.")
         return
 
     print("Настройка веб-страницы...")
