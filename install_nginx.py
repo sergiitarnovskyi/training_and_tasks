@@ -10,6 +10,7 @@ import subprocess
 def run_cmd(cmd):
     process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = process.communicate()
+    ##Uncomment the line bellow to show full cmd output and errors. Be carefull, a lot of info
     ##print(f"{cmd}:\n{out.decode()}")
     if process.returncode != 0 and err:
         print(f"Ошибка: {err.decode()}")
